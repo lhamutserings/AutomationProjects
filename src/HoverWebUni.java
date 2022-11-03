@@ -19,22 +19,19 @@ public class HoverWebUni {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
 
-      //driver.findElement(By.cssSelector("div.dropdown:nth-child(1) > button:nth-child(1)")).click();
-        ///driver.findElement(By.cssSelector("div.dropdown:nth-child(1) > div:nth-child(2) > a:nth-child(1)")).click();
-
+// introduce actions class for mouse/keyboard work
         Actions action = new Actions(driver);
+        // introduce link to hover over here first
         WebElement hover = driver.findElement(By.className("dropbtn"));
-
-
         int l = 2000;
+        //then we move to hover. then to the link and click
         action.moveToElement(hover).pause(l).moveToElement(driver.findElement(By.cssSelector("div.dropdown:nth-child(1) > div:nth-child(2) > a:nth-child(1)"))).click().build().perform();
 
-      //
-        //  WebElement hover = driver.findElement(By.xpath("html/body/div[13]/ul/li[4]/a"));
-        //action.moveToElement(we).moveToElement(webdriver.findElement(By.xpath("/expression-here"))).click().build().perform();
+      //dismiss alert box
         Thread.sleep(l);
         driver.switchTo().alert().dismiss();
 
+        //close tab and browser
         driver.close();
         Thread.sleep(l);
         driver.close();

@@ -17,7 +17,7 @@ public class TestCase4 {
         driver.switchTo().window(tab.get(1));
 
         driver.findElement(By.id("password")).sendKeys("lhamu123");
-        String text = driver.
+       // String text = driver.
 
     }
 }
