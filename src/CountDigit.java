@@ -7,11 +7,15 @@ public class CountDigit {
         int num = sc.nextInt();
         int count=0;
         while (num>0) {
+            int rem = num % 10; // to reverse a num
+            System.out.print(rem);
             num = num / 10;
             count++;
 
         }
-        System.out.println("Total number of digits"+ count);
+        System.out.println(" Total number of digits "+ count);
+
+
 
 
         }
